@@ -70,6 +70,7 @@ function setHeader(level) {
 
 async function resetGame() {
   if (!gameRunning) {
+    await delay(500);
     level = 1;
     setHeader(level);
     await delay(500);
@@ -82,6 +83,7 @@ async function checkButton(colorName) {
   if (colorName === buttonsSequenceArray[streak]) {
     streak += 1;
     if (streak === buttonsSequenceArray.length) {
+      await delay(500);
       level = setLevel(level);
       setHeader(level);
       await delay(500);
